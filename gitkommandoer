@@ -1,0 +1,54 @@
+hav ssh key pair klar
+
+læg public nøglen på github - under settings -> SSH and GPG keys
+i .ssh folderen: cat [ssh-nøgle-navn].pub og kopier DEN HELE
+
+test om der er hul igennem:
+ssh -T git@github.com
+
+I projektfolder:
+
+git init
+
+git add .  skal altid gøres for commit, ellers git add -A
+
+git commit -m "commit message"
+
+git remote add origin [ssh url for github repo]
+
+git push -u origin master
+
+man skal kun pushe til origin master første gang, senere skriver man bare
+
+git push
+
+medmindre man skifter branch I guess?
+
+for at skifte remote:
+
+git remote set-url origin [ssh url github repo]
+
+
+Git noter fra Prosa git kurset:
+
+type echo ... >> file.txt to append to a file
+use single > to override what is in a file or create a new file 
+with the content if no other file exist
+type clear to wipe the terminal window
+brug ls -al for at se alle filer/mapper og deres rettigheder, drwxr-xr-x for eksempel
+commit beskeder bruger vim som default, man skal ændre det manuelt til fx nano
+
+the purpose of git is to handle text files, but it can handle binaries as well
+
+setting up git: git config --global user.name "..?
+
+ændr git default editor: git config --global core.editor nano
+kan være notepad osv i stedet for nano
+
+git config -- list   -git config options
+cat ~/.gitconfig -gør det samme
+aliasses ses også her
+
+
+git pull er fetch og merge i en. risiko ved merge konflikter.
+Hvis man fetcher først kan man se på forhånd at der var merge konflikter
